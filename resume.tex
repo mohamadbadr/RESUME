@@ -1,0 +1,136 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Mohamad Badr Mohamad Ahmed Abd El-latif}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{April 29, 1994}
+\PersonalEntry{Address}{283 Yasmin 1, First Settlement, New Cairo}
+\PersonalEntry{Phone}{0100-999-0751}
+\PersonalEntry{Mail}{\url{m.badr94@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{BSc. Name of Education}{2012-2017}{German University in Cairo}{
+\begin{itemize}
+\item 9th semester.
+\item current GPA 2.46 (German grading system).
+\end{itemize}
+}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{Front End Android Developer}{2016}{eSEED, Internship}{Working as a front end android developer }
+\sepspace
+
+\EducationEntry{Junior Teaching Assistant (CSEN 202)}{2015}{German University in Cairo, Part-time}{
+\begin{itemize}
+\item Assist in lab sessions.
+\item office hours for students.
+\end{itemize}
+\textbf{Descriptiion:}\\
+This course is designed to teach students the basics of computer Programming in an object-oriented framework and using Java as a programming language example for learning software writing skills. Java includes a lot of facilities that satisfies the requirements for developing high scale, secure and maintainable software.
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Languages}{Arabic (mother tongue)}
+\SkillsEntry{}{English (fluent)}
+
+\SkillsEntry{Software}{\textsc{Unity 3D}, \textsc{Arduino}, \textsc{Android Studio},\textsc{Visual Studio}, \LaTeX}
+
+\NewPart{Interests}{}
+\begin{itemize}
+\item Game Development.
+\item Web and Mobile Application Development.
+\end{itemize}
+
+
+%%% References
+%%% ------------------------------------------------------------
+\end{document}
+"# RESUME" 
